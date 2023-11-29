@@ -1,0 +1,1325 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    color: #666;
+    font-family: "Montserrat", sans-serif;
+}
+
+.material-icons-outline{
+    vertical-align: middle;
+    line-height: 1px;
+}
+
+.text-primary {
+    color: #666666;
+  }
+  
+  .text-blue {
+    color: #246dec;
+  }
+  
+  .text-red {
+    color: #cc3c43;
+  }
+  
+  .text-green {
+    color: #367952;
+  }
+  
+  .text-orange {
+    color: #f5b74f;
+  }
+  
+  .font-weight-bold {
+    font-weight: 600;
+  }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: 
+        "sidebar header header header"
+        "sidebar main main main";
+    height: 100vh;
+}
+
+
+/*---------HEADER----------*/
+
+.header{
+    grid-area: header;
+    height: 50px;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon {
+    display: none;
+  }
+
+
+/*---------SIDEBAR----------*/
+
+#sidebar{
+    grid-area: sidebar;
+    height: 100%;
+    background-color: #6EC9FF;
+    color: #f8f8f8;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    z-index: 2; /* Asegura que el sidebar tenga un z-index mayor */
+}
+
+.sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px;
+  }
+
+  .sidebar-title > span {
+    display: none;
+  }
+
+  .sidebar-brand {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .sidebar-list {
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none;
+  }
+
+  .sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+  }
+
+  .sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: #f8f8f8;
+  }
+
+  .sidebar-list-item > a > span {
+    vertical-align: middle;
+}
+
+  .sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+  }
+
+/*---------MAIN----------*/
+
+.main-container{
+    grid-area: main;  
+    overflow-y: auto;
+    padding: 10px 10px;
+    position: relative; /* Añade position: relative; para que z-index funcione */
+}
+
+.main-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main-title > p {
+    font-size: 15px;
+  }
+
+  .main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.card:first-child {
+    border-left: 7px solid #6CC26C ;
+}
+
+.card:nth-child(2) {
+    border-left: 7px solid #FFA07A;
+}
+
+.card:nth-child(3) {
+    border-left: 7px solid #6EC9FF;
+}
+
+.card > span {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-inner > p {
+    font-size: 15px;
+  }
+
+  .card-inner > span {
+    font-size: 15px;
+  }
+
+  .botones-nuevos-movimientos input[type="button"]{
+    background-color: #6EC9FF;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    padding: 20px 70px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    font-size: 15px;
+}
+
+.botones-nuevos-movimientos {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 50px;
+    margin: 20px 200px;
+  }
+
+  .boton-nuevo-ingreso input[type="button"]:hover{
+    background-color: #90d5fc;
+    cursor: pointer;
+  }
+
+  .boton-nuevo-egreso input[type="button"]:hover{
+    background-color: #90d5fc;
+    cursor: pointer;
+  }
+
+.movement-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin: 20px 100px;
+}
+
+.card-movement{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d3;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    text-align: center
+}
+
+.movement-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0; /* Ajusta la distancia entre las celdas a 0 */
+    margin-top: 15px;
+}
+
+.movement-table th, .movement-table td {
+    padding: 0px; /* Reduce el espaciado interior de las celdas */
+    text-align: left;
+}
+
+.editar-button {
+    background-color: #fff;
+    color: #666;
+    border: none;
+    padding: 3px 8px; /* Ajusta el tamaño del botón */
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.ver-mas-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #666;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.modal-ingreso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s .4s;
+  --transform: translateY(-100vh);
+  --transition: transform .4s;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .4s;
+  --transform: translateY(0);
+  --transition: transform .4s .4s;
+}
+
+.modal-container {
+  margin: auto;
+  width: 90%;
+  height: 300px;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: flex;
+  justify-content: column;
+  align-items: flex-start;
+  transform: var(--transform);
+  transition: var(--transition);
+
+}
+
+.icon-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px; /* Ajusta el espacio entre columnas */
+  margin-bottom: 20px;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.icon-cell {
+  width: 120px; /* Tamaño fijo para todas las celdas */
+  height: 90px; /* Altura fija para todas las celdas (ajústala según tus necesidades) */
+  text-align: left; /* Alinea el texto a la izquierda */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos hijos a la izquierda */
+  justify-content: flex-start; /* Alinea los elementos hijos arriba */
+}
+
+.modal-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fondo-icono {
+  background-color: #6CC26C;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #fff;
+  text-align: left; /* Alinea el texto a la izquierda */
+  padding-left: 10px; /* Agrega un poco de espacio a la izquierda */
+}
+
+.icon-button p {
+  color: #666;
+  margin-top: 5px;
+}
+
+.icon-container p {
+  margin-top: 5px;
+}
+
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: -30%;
+}
+
+.modal-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  margin-bottom: 15px;
+}
+
+.modal-fields,
+.modal-buttons {
+  width: 100%;
+}
+
+.field,
+.modal-buttons {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.field {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.field label {
+  font-size: 15px;
+  margin-bottom: 5px;
+  display: block; /* Asegura que las etiquetas estén en líneas separadas */
+}
+
+.field input {
+  width: 100%; /* Asegura que todos los campos de entrada tengan el mismo ancho */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+
+}
+
+.field input {
+  width: calc(100% - 20px); /* Ajusta el ancho del campo de entrada */
+  /* Resta 20px para tener en cuenta el espacio del borde */
+}
+
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea los botones a la izquierda */
+  margin-top: 5px;
+}
+
+.modal-buttons a {
+  margin-top: 5px; /* Ajusta el margen superior */
+}
+
+.modal-title {
+  font-size: 1rem;
+  margin: 0 0 0.5em;
+}
+
+.modal-aceptar {
+  text-decoration: none;
+  color: #fff;
+  background-color: #6EC9FF;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color .3s;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  font-size: 15px;
+}
+
+.modal-aceptar:hover {
+  color: #fff;
+  background-color: #90d5fc;
+}
+
+.modal-cancel {
+  text-decoration: underline;
+  color: #666;
+  cursor: pointer;
+  font-weight: 300;
+  transition: color .3s;
+  font-size: 15px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.modal-cancel:hover {
+  color: #000;
+}
+
+.modal-egreso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s .4s;
+  --transform: translateY(-100vh);
+  --transition: transform .4s;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .4s;
+  --transform: translateY(0);
+  --transition: transform .4s .4s;
+}
+
+.modal-container-egreso {
+  margin: auto;
+  width: 90%;
+  height: 380px;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: flex;
+  justify-content: column;
+  align-items: flex-start;
+  transform: var(--transform);
+  transition: var(--transition);
+
+}
+
+.icon-table-egreso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px; /* Ajusta el espacio entre columnas */
+  margin-bottom: 20px;
+}
+
+.icon-row-egreso {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.icon-cell-egreso {
+  width: 90px; /* Tamaño fijo para todas las celdas */
+  height: 80px; /* Altura fija para todas las celdas (ajústala según tus necesidades) */
+  text-align: left; /* Alinea el texto a la izquierda */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos hijos a la izquierda */
+  justify-content: flex-start; /* Alinea los elementos hijos arriba */
+}
+
+.modal-icons-egreso {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fondo-icono-egreso {
+  background-color: #FFA07A;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button-egreso {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #fff;
+  text-align: left; /* Alinea el texto a la izquierda */
+  padding-left: 10px; /* Agrega un poco de espacio a la izquierda */
+}
+
+.icon-button-egreso p {
+  color: #666;
+  margin-top: 5px;
+}
+
+.icon-container-egreso p {
+  margin-top: 5px;
+}
+
+.modal-content-egreso {
+  display: flex;
+  flex-direction: column;
+  margin-left: -40%;
+}
+
+.modal-fields-egreso {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  margin-bottom: 15px;
+}
+
+.field-egreso,
+.modal-buttons-egreso {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.field-egreso {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.field-egreso label {
+  font-size: 15px;
+  margin-bottom: 5px;
+  display: block; /* Asegura que las etiquetas estén en líneas separadas */
+}
+
+.field-egreso input {
+  width: 100%; /* Asegura que todos los campos de entrada tengan el mismo ancho */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+
+}
+
+.field-egreso input {
+  width: calc(100% - 20px); /* Ajusta el ancho del campo de entrada */
+  /* Resta 20px para tener en cuenta el espacio del borde */
+}
+
+
+.modal-buttons-egreso {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea los botones a la izquierda */
+  margin-top: 5px;
+}
+
+.modal-buttons-egreso a {
+  margin-top: 5px; /* Ajusta el margen superior */
+}
+
+.modal-title {
+  font-size: 1rem;
+  margin: 0 0 0.5em;
+}
+
+.modal-aceptar-egreso {
+  text-decoration: none;
+  color: #fff;
+  background-color: #6EC9FF;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color .3s;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  font-size: 15px;
+}
+
+.modal-aceptar-egreso:hover {
+  color: #fff;
+  background-color: #90d5fc;
+}
+
+.modal-cancel-egreso {
+  text-decoration: underline;
+  color: #666;
+  cursor: pointer;
+  font-weight: 300;
+  transition: color .3s;
+  font-size: 15px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.modal-cancel-egreso:hover {
+  color: #000;
+}
+
+
+/* ---------- MEDIA QUERIES ---------- */
+
+
+/* Medium <= 992px */
+@media screen and (max-width: 1024px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+          "header"
+          "main";
+  }
+
+  #sidebar {
+      display: none;
+  }
+
+  .menu-icon {
+      display: inline;
+  }
+
+  .sidebar-title > span {
+      display: inline;
+  }
+}
+  
+/* Small <= 768px */
+@media screen and (max-width: 768px) {
+
+  .grid-container {
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  }
+
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .movement {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+
+  .movement-cards {
+      grid-template-columns: 1fr; /* Cambia a una columna en versión responsive */
+      gap: 20px; /* Ajusta el espacio entre los elementos en la versión responsive */
+      margin: 20px 0;
+  }
+
+  .botones-nuevos-movimientos {
+      grid-template-columns: 1fr; /* Cambia a una columna en versión responsive */
+      margin: 10px 0; /* Ajusta el margen en la versión responsive */
+  }
+
+  .boton-nuevo-ingreso,
+  .boton-nuevo-egreso {
+      margin-top: 0px; /* Ajusta el margen superior entre los botones en la versión responsive */
+  }
+}
+  
+ /* Extra Small <= 576px */
+@media screen and (max-width: 576px) {
+  .grid-container {
+      overflow-x: hidden; /* Evita el desplazamiento horizontal */
+  }
+
+  .header-left {
+      display: none;
+  }
+
+  .movement-cards,
+  .movement {
+      grid-template-columns: 1fr; /* Cambia a una columna en versión responsive */
+      gap: 20px; /* Ajusta el espacio entre los elementos en la versión responsive */
+      margin: 20px 0;
+  }
+
+  .icon-row{
+    margin-left: -10%;
+    margin-right: 20%;
+  }
+
+  .modal-buttons-egreso a {
+    margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+  }
+  
+    .icon-row-egreso{
+  margin-left: -15%;
+  margin-right: 30%;
+  }
+  
+    .modal-fields-egreso {
+  width: 130px; /* Asegura que los campos ocupen el ancho completo del modal */
+  }
+  
+    .modal-aceptar-egreso{
+  padding: 9px 40px;
+  border-radius: 9px;
+  }
+  
+  .modal-container-egreso{
+    padding: 1em 1em;
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    max-height: 80vh; /* Altura máxima del modal, ajusta según sea necesario */
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .icon-table-egreso{
+    margin-top: 250px;
+    margin-left: 90px;
+    }
+    
+    .modal-content-egreso {
+      margin-top: 2px;
+      margin-left: -170%;
+    }
+    
+    .modal-buttons-egreso{
+    margin-top: 400px
+    }
+  
+    .modal-aceptar-egreso{
+      padding: 10px 50px;
+      border-radius: 10px;
+    }
+  
+    .modal-fields-egreso {
+      width: 100%;
+  }
+
+}
+
+/* Small <= 540px */
+@media screen and (max-width: 540px) {
+  .movement {
+      grid-template-columns: 1fr; /* Cambia a una columna en versión responsive */
+      gap: 10px; /* Ajusta el espacio entre los elementos en la versión responsive */
+      margin: 10px 0; /* Ajusta el margen en la versión responsive */
+  }
+
+  .table-container,
+  .fields-container {
+      width: 100%;
+  }
+
+  .movement-table {
+      width: 100%;
+      margin-top: 5px;
+  }
+
+  .modal-buttons a {
+      margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+  }
+
+  .icon-row{
+    margin-left: -15%;
+    margin-right: 30%;
+  }
+
+  .modal-fields {
+    width: 100%; /* Asegura que los campos ocupen el ancho completo del modal */
+}
+
+  .modal-aceptar{
+  padding: 9px 40px;
+  border-radius: 9px;
+}
+
+.icon-table{
+  margin-top: 0px;
+  margin-left: 50px;
+  }
+  
+.modal-content {
+    margin-top: 1px;
+    margin-left: -60%;
+  }
+  
+
+  .modal-buttons-egreso a {
+  margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+}
+
+  .icon-row-egreso{
+margin-left: -15%;
+margin-right: 30%;
+}
+
+  .modal-fields-egreso {
+width: 130px; /* Asegura que los campos ocupen el ancho completo del modal */
+}
+
+.modal-container-egreso{
+  padding: 1em 1em;
+  overflow-y: auto; /* Permite desplazamiento vertical */
+  max-height: 80vh; /* Altura máxima del modal, ajusta según sea necesario */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.icon-table-egreso{
+  margin-top: 250px;
+  margin-left: 150px;
+  }
+  
+.modal-content-egreso {
+    margin-top: 1px;
+    margin-left: -125%;
+  }
+  
+  .modal-buttons-egreso{
+  margin-top: 400px
+  }
+
+  .modal-aceptar-egreso{
+    padding: 10px 50px;
+    border-radius: 10px;
+  }
+
+  .modal-fields-egreso {
+    width: 100%;
+}
+
+}
+
+/* Small <= 430px */
+@media screen and (max-width: 430px) {
+
+  .modal-container {
+    padding: 1em 1em;
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    max-height: 80vh; /* Altura máxima del modal, ajusta según sea necesario */
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .movement {
+      grid-template-columns: 1fr; /* Cambia a una columna en versión responsive */
+      gap: 10px; /* Ajusta el espacio entre los elementos en la versión responsive */
+      margin: 10px 0; /* Ajusta el margen en la versión responsive */
+  }
+
+  .table-container,
+  .fields-container {
+      width: 100%;
+  }
+
+  .movement-table {
+      width: 100%;
+      margin-top: 5px;
+  }
+
+  .modal-buttons a {
+      margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+  }
+
+  .icon-row{
+    margin-left: -15%;
+    margin-right: 30%;
+  }
+
+
+.icon-table{
+  margin-top: 250px;
+  margin-left: 30%;
+  }
+  
+.modal-content {
+    margin-top: 1px;
+    margin-left: -140%;
+  }
+  
+  .modal-buttons{
+  margin-top: 215px;
+  margin-left: -5%;
+  }
+
+  .modal-buttons-egreso a {
+  margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+}
+
+  .icon-row-egreso{
+margin-left: -15%;
+margin-right: 30%;
+}
+
+.modal-container-egreso{
+  padding: 1em 1em;
+  overflow-y: auto; /* Permite desplazamiento vertical */
+  max-height: 80vh; /* Altura máxima del modal, ajusta según sea necesario */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.icon-table-egreso{
+  margin-top: 250px;
+  margin-left: 100px;
+  }
+  
+.modal-content-egreso {
+    margin-top: 1px;
+    margin-left: -155%;
+  }
+  
+  .modal-buttons-egreso{
+  margin-top: 400px
+  }
+
+  .modal-aceptar-egreso{
+    padding: 10px 50px;
+    border-radius: 10px;
+  }
+
+  .modal-fields-egreso {
+    width: 100%;
+}
+
+}
+
+/* Small <= 414px */
+@media screen and (max-width: 414px) {
+  .movement {
+      grid-template-columns: 1fr; /* Cambia a una columna en versión responsive */
+      gap: 10px; /* Ajusta el espacio entre los elementos en la versión responsive */
+      margin: 10px 0; /* Ajusta el margen en la versión responsive */
+  }
+
+  .table-container,
+  .fields-container {
+      width: 100%;
+  }
+
+  .movement-table {
+      width: 100%;
+      margin-top: 5px;
+  }
+
+  .modal-buttons a {
+      margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+  }
+
+  .icon-row{
+    margin-left: -15%;
+    margin-right: 30%;
+  }
+
+  .icon-table{
+    margin-left: 30%;
+    }
+    
+  .modal-content {
+      margin-top: 1px;
+      margin-left: -145%;
+    }
+
+  .modal-buttons{
+      margin-left: -5%;
+    }
+
+
+  .modal-buttons-egreso a {
+  margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+}
+
+  .icon-row-egreso{
+margin-left: -15%;
+margin-right: 30%;
+}
+
+.modal-container-egreso{
+  padding: 1em 1em;
+  overflow-y: auto; /* Permite desplazamiento vertical */
+  max-height: 80vh; /* Altura máxima del modal, ajusta según sea necesario */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.icon-table-egreso{
+  margin-top: 250px;
+  margin-left: 100px;
+  }
+  
+.modal-content-egreso {
+    margin-top: 1px;
+    margin-left: -165%;
+  }
+  
+  .modal-buttons-egreso{
+  margin-top: 400px
+  }
+
+   .modal-fields-egreso {
+    width: 100%;
+}
+
+}
+
+/* Small <= 390px */
+@media screen and (max-width: 390px) {
+  .movement {
+      grid-template-columns: 1fr; /* Cambia a una columna en versión responsive */
+      gap: 10px; /* Ajusta el espacio entre los elementos en la versión responsive */
+      margin: 10px 0; /* Ajusta el margen en la versión responsive */
+  }
+
+  .table-container,
+  .fields-container {
+      width: 100%;
+  }
+
+  .movement-table {
+      width: 100%;
+      margin-top: 5px;
+  }
+
+  .modal-buttons a {
+      margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+  }
+
+  .modal-buttons {
+    margin-left: -10%;
+  }
+
+  .icon-row{
+    margin-left: -15%;
+    margin-right: 30%;
+  }
+
+  .icon-table{
+    margin-left: 30%;
+  }
+
+  .modal-content{
+    margin-left: -155%;
+  }
+
+  .modal-buttons-egreso a {
+  margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+}
+
+  .icon-row-egreso{
+margin-left: -15%;
+margin-right: 30%;
+}
+
+.modal-container-egreso{
+  padding: 1em 1em;
+  overflow-y: auto; /* Permite desplazamiento vertical */
+  max-height: 80vh; /* Altura máxima del modal, ajusta según sea necesario */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.icon-table-egreso{
+  margin-top: 250px;
+  margin-left: 100px;
+  }
+  
+.modal-content-egreso {
+    margin-top: 1px;
+    margin-left: -170%;
+  }
+  
+  .modal-buttons-egreso{
+  margin-top: 400px;
+  margin-left: -3%;
+  }
+
+  .modal-fields-egreso {
+    width: 100%;
+}
+
+}
+
+/* Extra Small <= 375px */
+@media screen and (max-width: 375px) {
+  .movement {
+      grid-template-columns: 1fr; /* Cambia a una columna en versión responsive */
+      gap: 10px; /* Ajusta el espacio entre los elementos en la versión responsive */
+      margin: 10px 0; /* Ajusta el margen en la versión responsive */
+  }
+
+  .table-container,
+  .fields-container {
+      width: 100%;
+  }
+
+  .movement-table {
+      width: 100%;
+      margin-top: 5px;
+  }
+
+  .modal-buttons a {
+      margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+  }
+
+  .icon-row{
+    margin-left: -15%;
+    margin-right: 30%;
+  }
+
+  .icon-table {
+    margin-left: 30%;
+    }
+    
+  .modal-content {
+      margin-left: -165%;
+    }
+
+  .modal-buttons-egreso a {
+  margin-top: 10px; /* Ajusta el margen superior de los botones en la versión responsive */
+}
+
+  .icon-row-egreso{
+margin-left: -15%;
+margin-right: 30%;
+}
+
+  .modal-fields-egreso {
+width: 130px; /* Asegura que los campos ocupen el ancho completo del modal */
+}
+
+  .modal-aceptar-egreso{
+padding: 9px 40px;
+border-radius: 9px;
+}
+
+.modal-container-egreso{
+  padding: 1em 1em;
+  overflow-y: auto; /* Permite desplazamiento vertical */
+  max-height: 80vh; /* Altura máxima del modal, ajusta según sea necesario */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.icon-table-egreso{
+  margin-top: 250px;
+  margin-left: 70px;
+  }
+  
+.modal-content-egreso {
+    margin-top: 1px;
+    margin-left: -180%;
+  }
+  
+  .modal-buttons-egreso{
+  margin-top: 400px
+  }
+
+  .modal-aceptar-egreso{
+    padding: 10px 50px;
+    border-radius: 10px;
+  }
+
+  .modal-fields-egreso {
+    width: 100%;
+}
+
+}
+
+  /* Custom Media Query for 280x653 */
+@media screen and (max-width: 280px) and (max-height: 653px) {
+  .modal-container {
+      padding: 1em 1em; /* Ajusta el relleno del modal para dar más espacio a los campos */
+  }
+
+  .field {
+      margin-bottom: 10px; /* Ajusta el margen inferior de los campos */
+  }
+
+  .field label {
+    font-size: 12px; /* Ajusta el tamaño de fuente de las etiquetas de los campos */
+}
+
+  .modal-buttons a {
+      margin-top: 5px; /* Ajusta el margen superior de los botones en la versión responsive */
+  }
+
+  .icon-row{
+    margin-left: -10%;
+    margin-right: 40%;
+  }
+
+  .icon-table{
+      margin-left: 30%;
+    }
+    
+    .modal-content {
+       margin-left: -220%;
+    }
+    
+    .modal-buttons{
+    margin-top: 260px;
+    }
+
+
+  .modal-container-egreso {
+    padding: 1em 1em;
+    overflow-y: auto; /* Permite desplazamiento vertical */
+    max-height: 80vh; /* Altura máxima del modal, ajusta según sea necesario */
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+  .modal-fields-egreso {
+    width: 100%;
+}
+
+  .field-egreso {
+    margin-bottom: 10px; /* Ajusta el margen inferior de los campos */
+}
+
+  .field-egreso label {
+  font-size: 12px; /* Ajusta el tamaño de fuente de las etiquetas de los campos */
+}
+
+  .modal-aceptar-egreso{
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+
+  .icon-row-egreso{
+  margin-left: -1%;
+  margin-right: 40%;
+}
+
+  .icon-cell-egreso{
+  width: 120px;
+  height: 70px;
+}
+
+  .fondo-icono-egreso{
+  width: 40px;
+  height: 40px;
+}
+
+.icon-table-egreso{
+margin-top: 230px;
+margin-left: 10px;
+}
+
+.modal-content-egreso {
+  margin-top: 10px;
+  margin-left: -300%;
+}
+
+.modal-buttons-egreso{
+margin-top: 360px
+}
+
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    
+    <!--Montserrat font-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+     <!-- Material Icons -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+<!--Custom CSS -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-icons-outlined">notifications</span>
+                <span class="material-icons-outlined">email</span>
+                <span class="material-icons-outlined">account_circle</span>
+            </div>
+        </header>
+
+        <!--End heather-->
+
+ <!--Sidebar-->
+<aside id="sidebar">
+    <div class="sidebar-title">
+        <div class="sidebar-brand">
+            <span class="material-icons-outlined">leaderboard</span> myfinway
+        </div>
+        <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+    </div>
+
+    <ul class="sidebar-list">
+        <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+                <span class="material-icons-outlined">home</span> Inicio
+            </a>
+        </li>
+        <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+                <span class="material-icons-outlined">add_box</span> Movimientos
+            </a>
+        </li>
+        <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+                <span class="material-icons-outlined">assessment</span> Análisis
+            </a>
+        </li>
+        <li class="sidebar-list-item">
+            <a href="#" target="_blank">
+                <span class="material-icons-outlined">settings</span> Settings
+            </a>
+        </li>
+    </ul>
+</aside>
+<!--End Sidebar-->
+
+<!--Main-->
+<main class="main-container">
+    <div class="main-title">
+        <p class="font-weight-bold">MOVIMIENTOS</p>
+    </div>
+
+    <div class="main-cards">
+        <div class="card">
+            <div class="card-inner">
+                <p class="text-primary">Ingresos totales</p>
+            </div>
+            <span class="text-primary font-weight-bold">$1,3M</span>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <p class="text-primary">Egresos totales</p>
+            </div>
+            <span class="text-primary font-weight-bold">$1M</span>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <p class="text-primary">Balance</p>
+            </div>
+            <span class="text-primary font-weight-bold">$300K</span>
+        </div>
+    </div> <!-- Close .main-cards here -->
+
+    <div class="botones-nuevos-movimientos">
+        <div class="boton-nuevo-ingreso">
+                <input type="button" value="Nuevo ingreso" id="new-income">
+            </div>
+            <div class="boton-nuevo-egreso">
+                <input type="button" value="Nuevo egreso" id="new-egress">
+            </div>
+        </div>
+
+    <div class="movement-cards">
+        <div class="movement">
+            <div class="card-movement">
+                <p class="text-primary">Ultimos movimientos de ingreso</p>
+                <table class="movement-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Descripción</th>
+                            <th>Importe</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10-01-23</td>
+                            <td>Sueldo</td>
+                            <td>$500</td>
+                            <td><button class="editar-button"><span class="material-icons-outlined">edit</span></button></td>
+                        </tr>
+                        <tr>
+                            <td>10-02-23</td>
+                            <td>Sueldo</td>
+                            <td>$600</td>
+                            <td><button class="editar-button"><span class="material-icons-outlined">edit</span></button></td>
+                        </tr>
+                        <tr>
+                            <td>10-03-23</td>
+                            <td>Sueldo</td>
+                            <td>$1000</td>
+                            <td><button class="editar-button"><span class="material-icons-outlined">edit</span></button></td>
+                        </tr>
+                        <tr>
+                            <td>10-04-23</td>
+                            <td>Sueldo</td>
+                            <td>$900</td>
+                            <td><button class="editar-button"><span class="material-icons-outlined">edit</span></button></td>
+                        </tr>
+                        <!-- Agrega más filas según sea necesario -->
+                        <tr>
+                            <td colspan="4" style="text-align: center;">
+                                <button class="ver-mas-button">+ Ver más movimientos</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="movement">
+            <div class="card-movement">
+                <p class="text-primary">Ultimos movimientos de egreso</p>
+                <table class="movement-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Descripción</th>
+                            <th>Importe</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10-01-23</td>
+                            <td>Alquiler</td>
+                            <td>$100</td>
+                            <td><button class="editar-button"><span class="material-icons-outlined">edit</span></button></td>
+                        </tr>
+                        <tr>
+                            <td>10-02-23</td>
+                            <td>Supermecado</td>
+                            <td>$50</td>
+                            <td><button class="editar-button"><span class="material-icons-outlined">edit</span></button></td>
+                        </tr>
+                        <tr>
+                            <td>10-03-23</td>
+                            <td>Transporte</td>
+                            <td>$30</td>
+                            <td><button class="editar-button"><span class="material-icons-outlined">edit</span></button></td>
+                        </tr>
+                        <tr>
+                            <td>10-04-23</td>
+                            <td>Regalos</td>
+                            <td>$10</td>
+                            <td><button class="editar-button"><span class="material-icons-outlined">edit</span></button></td>
+                        </tr>
+                        <!-- Agrega más filas según sea necesario -->
+                        <tr>
+                            <td colspan="4" style="text-align: center;">
+                                <button class="ver-mas-button"> + Ver más movimientos</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</div>
+</main>
+
+<section class="modal-ingreso">
+    <div class="modal-container">
+        <table class="icon-table">
+            <tr class="icon-row">
+                <td class="icon-cell">
+                    <button class="icon-button">
+                        <span class="material-icons-outlined fondo-icono">work</span>
+                        <p>Sueldo</p>
+                    </button>
+                </td>
+                <td class="icon-cell">
+                    <button class="icon-button">
+                        <span class="material-icons-outlined fondo-icono">attach_money</span>
+                        <p>Otros ingresos</p>
+                    </button>
+                </td>
+            </tr>
+            <tr class="icon-row">
+                <td class="icon-cell">
+                    <button class="icon-button">
+                        <span class="material-icons-outlined fondo-icono">house</span>
+                        <p>Alquileres ganados</p>
+                    </button>
+                </td>
+                <td class="icon-cell">
+                    <button class="icon-button">
+                        <span class="material-icons-outlined fondo-icono">trending_up</span>
+                        <p>Inversiones ganadas</p>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <div class="modal-content">
+            <div class="modal-fields">
+                <div class="field">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha">
+                </div>
+                <div class="field">
+                    <label for="importe">Importe</label>
+                    <input type="number" id="importe" name="importe">
+                </div>
+                <div class="field">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" id="descripcion" name="descripcion" maxlength="15">
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <a href="#" class="modal-aceptar">Aceptar</a>
+                <a href="#" class="modal-cancel">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="modal-egreso">
+    <div class="modal-container-egreso">
+        <table class="icon-table-egreso">
+            <tr class="icon-row-egreso">
+                <td class="icon-cell-egreso">
+                    <button class="icon-button-egreso">
+                        <span class="material-icons-outlined fondo-icono-egreso">home</span>
+                        <p>Vivienda</p>
+                    </button>
+                </td>
+                <td class="icon-cell-egreso">
+                    <button class="icon-button-egreso">
+                        <span class="material-icons-outlined fondo-icono-egreso">shopping_bag</span>
+                        <p>Alimentos</p>
+                    </button>
+                </td>
+                <td class="icon-cell-egreso">
+                    <button class="icon-button-egreso">
+                        <span class="material-icons-outlined fondo-icono-egreso">school</span>
+                        <p>Educación</p>
+                    </button>
+                </td>
+            </tr>
+            <tr class="icon-row-egreso">
+                <td class="icon-cell-egreso">
+                    <button class="icon-button-egreso">
+                        <span class="material-icons-outlined fondo-icono-egreso">bolt</span>
+                        <p>Luz</p>
+                    </button>
+                </td>
+                <td class="icon-cell-egreso">
+                    <button class="icon-button-egreso">
+                        <span class="material-icons-outlined fondo-icono-egreso">water_drop</span>
+                        <p>Agua</p>
+                    </button>
+                </td>
+                <td class="icon-cell-egreso">
+                    <button class="icon-button-egreso">
+                        <span class="material-icons-outlined fondo-icono-egreso">keyboard_tab</span>
+                        <p>Otros egresos</p>
+                    </button>
+                </td>
+            </tr>
+                <tr class="icon-row-egreso">
+                    <td class="icon-cell-egreso">
+                        <button class="icon-button-egreso">
+                            <span class="material-icons-outlined fondo-icono-egreso">local_fire_department</span>
+                            <p>Gas</p>
+                        </button>
+                    </td>
+                    <td class="icon-cell-egreso">
+                        <button class="icon-button-egreso">
+                            <span class="material-icons-outlined fondo-icono-egreso">redeem</span>
+                            <p>Regalos</p>
+                        </button>
+                    </td>
+                    <td class="icon-cell-egreso">
+                        <button class="icon-button-egreso">
+                            <span class="material-icons-outlined fondo-icono-egreso">theaters</span>
+                            <p>Ocio</p>
+                        </button>
+                    </td>
+                </tr>
+                <tr class="icon-row-egreso">
+                    <td class="icon-cell-egreso">
+                        <button class="icon-button-egreso">
+                            <span class="material-icons-outlined fondo-icono-egreso">favorite</span>
+                            <p>Salud</p>
+                        </button>
+                    </td>
+                    <td class="icon-cell-egreso">
+                        <button class="icon-button-egreso">
+                            <span class="material-icons-outlined fondo-icono-egreso">directions_car</span>
+                            <p>Tranpsorte</p>
+                        </button>
+                    </td>
+                    <td class="icon-cell-egreso">
+                        <button class="icon-button-egreso">
+                            <span class="material-icons-outlined fondo-icono-egreso">fitness_center</span>
+                            <p>Gym</p>
+                        </button>
+                    </td>
+                </tr>
+        </table>
+        <div class="modal-content-egreso">
+            <div class="modal-fields-egreso">
+                <div class="field-egreso">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha">
+                </div>
+                <div class="field-egreso">
+                    <label for="importe">Importe</label>
+                    <input type="number" id="importe" name="importe">
+                </div>
+                <div class="field-egreso">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" id="descripcion" name="descripcion" maxlength="15">
+                </div>
+            </div>
+            <div class="modal-buttons-egreso">
+                <a href="#" class="modal-aceptar-egreso">Aceptar</a>
+                <a href="#" class="modal-cancel-egreso">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!--Custom JS-->
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
